@@ -1,0 +1,34 @@
+
+https://help.hitachivantara.com/Documentation/Pentaho/8.2/Products/Data_Integration/Transformation_Step_Reference/Calculator
+
+AccidentID,*
+Severty -fact-*
+Start_Time,*
+End_Time,*
+Street, ?
+Side,*
+City,*
+State,*
+Country,*
+Temperature(F),*
+Humidity(%),*
+Pressure(in),
+Visibility(mi),*
+Wind_Direction,*
+Wind_Speed(mph),*
+Weather_Condition,*
+Amenity,*
+Bump,*
+Crossing,*
+Give_Way,*
+Junction,*
+No_Exit,*
+Railway,*
+Roundabout,*
+Station,*
+Stop,*
+affic_Calming,*
+Traffic_Signal,*
+Turning_Loop,*
+
+

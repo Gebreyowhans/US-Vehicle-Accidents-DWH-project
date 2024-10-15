@@ -1,0 +1,94 @@
+
+===============   Weather =============
+Table: weather
+Columns:
+WeatherID int AI PK 
+Temperature decimal(10,0) 
+WindSpeed decimal(10,0) 
+Visibility decimal(10,0) 
+WindDirection varchar(45) 
+WeatherCondition varchar(45) 
+Pressure decimal(10,0) 
+Humidity decimal(10,0) 
+AccidentId varchar(10)
+  
+  ==========Location =============
+  LocationId int AI PK 
+Country varchar(45) 
+state varchar(45) 
+City varchar(45) 
+AccidentId varchar(45)
+  
+  
+ =========== Infrastructures=============
+ 
+ Table: traffic_infrastructures
+Columns:
+InfrastructureId int AI PK 
+Amenity binary(4) 
+Bump binary(4) 
+Crossing binary(4) 
+Giveway binary(4) 
+Junction binary(4) 
+No_Exit binary(4) 
+Railway binary(4) 
+RoundAbout binary(4) 
+Station binary(4) 
+Stop binary(4) 
+TraficClaming binary(4) 
+TraficSignal binary(4) 
+TurningLoop binary(4) 
+AccidentID varcha
+
+=======
+
+==========Date ======
+Table: date
+Columns:
+DateID int AI PK 
+Day int 
+Month int 
+Year int 
+AccidentID varchar(45) 
+DayWeek varchar(45)
+
+
+========Time=====
+
+Table: time
+Columns:
+TimeId int AI PK 
+StartTime varchar(45) 
+EndTime varchar(45) 
+DateId int
+
+=====AccidentID====
+
+Table: accident
+Columns:
+AccidentID varchar(45) PK 
+Severity int
+
+
+===============Create table script====
+
+CREATE TABLE IF NOT EXISTS traffic_infrastructures (
+    InfrastructureId INT AUTO_INCREMENT not null,
+    Amenity boolean not null,
+	Bump boolean not null,
+	Crossing boolean not null,
+   Giveway boolean not null,
+   Junction boolean not null,
+   No_Exit boolean not null,
+   Railway  boolean not null,
+   Station  boolean not null,
+   Stop  boolean not null,
+   TraficClaming  boolean not null,
+   TraficSignal  boolean not null,
+   TurningLoop  boolean not null,
+    AccidentId VARCHAR(45) not null,
+    PRIMARY KEY (InfrastructureId),
+    FOREIGN KEY (AccidentId)
+        REFERENCES accident (AccidentID)
+        ON UPDATE RESTRICT ON DELETE CASCADE
+);
